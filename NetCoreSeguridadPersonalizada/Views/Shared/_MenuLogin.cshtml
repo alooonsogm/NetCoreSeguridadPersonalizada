@@ -1,0 +1,12 @@
+﻿@if(Context.User.Identity.IsAuthenticated == false){
+    //Nuca llamaos al login, el truco estar llamar a una vista que tenga segurirdad y ahi aparece el login.
+    <li class="nav-link text-info">
+        <a class="nav-link" asp-controller="Usuarios" asp-action="Perfil">Log In</a>
+    </li>
+}
+else
+{
+    <li class="nav-link text-info">
+        <a class="nav-link" asp-controller="Managed" asp-action="Logout">Log Out <span style="color:blue">@Context.User.Identity.Name</span></a>
+    </li>
+}
